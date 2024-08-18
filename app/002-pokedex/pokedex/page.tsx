@@ -47,27 +47,24 @@ export default function PokedexPage() {
         </button>
 
         <div className='w-full grid grid-cols-5 gap-6'>
-          <Suspense fallback={<p>Loading...</p>}>
-            {pokemonList.length > 0 &&
-              pokemonList.map((pokemon: Pokemon) => (
-                <Link
-                  href={`/002-pokedex/pokedex/${pokemon?.name}`}
-                  key={pokemon?.name}
-                  className='pokedex-box bg-white/80 p-2 shadow-xl group flex flex-col justify-center items-center'
-                >
-                  <Image
-                    src={pokemon?.sprites?.other?.["official-artwork"].front_default}
-                    alt={pokemon?.name}
-                    width={100}
-                    height={100}
-                  />
-                  <div className='text-blue-950 text-center'>
-                    [{formatNumber(pokemon?.id)}]{" "}
-                    <span className='capitalize'>{pokemon?.name}</span>
-                  </div>
-                </Link>
-              ))}
-          </Suspense>
+          {pokemonList.length > 0 &&
+            pokemonList.map((pokemon: Pokemon) => (
+              <Link
+                href={`/002-pokedex/pokedex/${pokemon?.name}`}
+                key={pokemon?.name}
+                className='pokedex-box bg-white/80 p-2 shadow-xl group flex flex-col justify-center items-center'
+              >
+                <Image
+                  src={pokemon?.sprites?.other?.["official-artwork"].front_default}
+                  alt={pokemon?.name}
+                  width={100}
+                  height={100}
+                />
+                <div className='text-blue-950 text-center'>
+                  [{formatNumber(pokemon?.id)}] <span className='capitalize'>{pokemon?.name}</span>
+                </div>
+              </Link>
+            ))}
         </div>
 
         <button className='group' onClick={() => setOffset(offset + 25)} disabled={offset === 1000}>
