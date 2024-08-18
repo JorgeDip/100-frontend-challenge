@@ -11,7 +11,7 @@ export const metadata = {
 export default function ProfileCard() {
   return (
     <main className='grid place-items-center items-center h-screen w-screen bg-001-profile'>
-      <Back />
+      {/* <Back /> */}
 
       <section className='flex flex-col w-96 h-[600px] bg-white rounded-[2.5rem] shadow-xl'>
         <div className='flex items-center justify-center bg-pink-800 rounded-t-[2.3rem] w-full h-full relative'>
