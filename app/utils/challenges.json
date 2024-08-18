@@ -1,0 +1,25 @@
+{
+    "challenges": [
+        {
+            "id": 1,
+            "title": "Profile Card",
+            "description": "Custom profile card with a fresh design.",
+            "image": "",
+            "link": "001-profile-card"
+        },
+        {
+            "id": 2,
+            "title": "Profile Card",
+            "description": "Custom profile card with a fresh design.",
+            "image": "",
+            "link": "001-profile-card"
+        },
+        {
+            "id": 3,
+            "title": "Profile Card",
+            "description": "Custom profile card with a fresh design.",
+            "image": "",
+            "link": "001-profile-card"
+        }
+    ]
+}
