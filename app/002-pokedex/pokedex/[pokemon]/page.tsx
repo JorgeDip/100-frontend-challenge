@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
 import { api } from "../../api/api"
 import { useParams, useRouter } from "next/navigation"
 import PokemonDetails from "./pokemonDetails"
@@ -22,10 +22,12 @@ export default function PokemonPage() {
       .catch((error) => setError(true))
   }, [])
   return (
-    <div className='w-full relative'>
-      <PokedexBack href='' onClick={() => router.back()} black />
-      <PokemonDetails props={pokemon} />
-      {error && <div>Error</div>}
-    </div>
+    <Suspense fallback={<p>Loading...</p>}>
+      <div className='w-full relative'>
+        <PokedexBack href='' onClick={() => router.back()} black />
+        <PokemonDetails props={pokemon} />
+        {error && <div>Error</div>}
+      </div>
+    </Suspense>
   )
 }
