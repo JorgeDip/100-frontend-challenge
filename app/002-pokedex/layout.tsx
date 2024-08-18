@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import Back from "../components/back"
 import Knot from "./components/knot"
 import "./styles.css"
@@ -16,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Knot />
         </div>
         <div className='h-screen bg-pattern-pokedex bg-blue-950 md:w-[1360px] md:h-[850px] rounded-r-lg'>
-          {children}
+          <Suspense fallback={<p>Loading...</p>}>{children}</Suspense>
         </div>
       </section>
     </main>
