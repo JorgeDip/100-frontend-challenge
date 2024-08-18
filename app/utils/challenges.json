@@ -1,28 +1,26 @@
-{
-    "challenges": [
-        {
-            "id": 1,
-            "title": "Profile Card",
-            "description": "Custom profile card with a fresh design.",
-            "image": "/images/screenshots/001-profile-card.png",
-            "link": "001-profile-card",
-            "author": "BigDevSoon"
-        },
-        {
-            "id": 2,
-            "title": "Profile Card",
-            "description": "Custom profile card with a fresh design.",
-            "image": "",
-            "link": "001-profile-card",
-            "author": ""
-        },
-        {
-            "id": 3,
-            "title": "Profile Card",
-            "description": "Custom profile card with a fresh design.",
-            "image": "",
-            "link": "001-profile-card",
-            "author": ""
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "title": "Profile Card",
+        "description": "Custom profile card with a fresh design.",
+        "image": "/images/screenshots/001-profile-card.png",
+        "link": "001-profile-card",
+        "author": "BigDevSoon"
+    },
+    {
+        "id": 2,
+        "title": "Pokedex",
+        "description": "Pokedex page with a list of pokemons and details.",
+        "image": "/images/screenshots/002-pokedex.png",
+        "link": "002-pokedex",
+        "author": "JorgeDip"
+    },
+    {
+        "id": 3,
+        "title": "Profile Card",
+        "description": "Custom profile card with a fresh design.",
+        "image": "",
+        "link": "001-profile-card",
+        "author": ""
+    }
+]

@@ -14,9 +14,9 @@ export default function Home() {
       </header>
 
       <section className=''>
-        <h2 className='text-2xl font-bold mb-10'>Challenges</h2>
+        <h2 className='text-2xl font-bold mb-10 text-center md:text-start'>Challenges</h2>
         <ul className='max-w-[1140px] grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
-          {Challenges.challenges.map((challenge: any) => (
+          {Challenges.map((challenge: any) => (
             <li key={challenge.id}>
               <Link
                 href={`/${challenge.link}`}
@@ -34,7 +34,7 @@ export default function Home() {
                 <div className='p-4'>
                   <h3 className='text-xl font-bold'>{challenge.title}</h3>
                   <p className='text-gray-700'>{challenge.description}</p>
-                  <small>Author: {challenge.author}</small>
+                  <small>Author: {challenge.author || "Unknown"}</small>
                 </div>
               </Link>
             </li>
