@@ -4,6 +4,7 @@ import { api } from "../../api/api"
 import { useParams, useRouter } from "next/navigation"
 import PokemonDetails from "./pokemonDetails"
 import PokedexBack from "../../components/pokedexBack"
+import Loading from "../../components/loading"
 
 export default function PokemonPage() {
   const router = useRouter()
@@ -22,9 +23,9 @@ export default function PokemonPage() {
       .catch((error) => setError(true))
   }, [])
   return (
-    <div className='w-full relative'>
+    <div className='w-screen md:w-full h-full relative'>
       <PokedexBack href='' onClick={() => router.back()} black />
-      <PokemonDetails props={pokemon} />
+      {pokemon ? <PokemonDetails props={pokemon} /> : <Loading />}
       {error && <div>Error</div>}
     </div>
   )

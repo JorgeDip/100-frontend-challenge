@@ -6,6 +6,7 @@ export default function PokedexTitle() {
       viewBox='0 0 788 173'
       width='788'
       height='150'
+      className='w-full'
     >
       <defs>
         <image

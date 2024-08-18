@@ -20,7 +20,7 @@ export default function Home() {
             <li key={challenge.id}>
               <Link
                 href={`/${challenge.link}`}
-                className='block bg-white md:rounded-lg shadow-md group'
+                className='block bg-white md:rounded-lg shadow-md group md:h-full'
               >
                 <div className='overflow-hidden'>
                   <Image

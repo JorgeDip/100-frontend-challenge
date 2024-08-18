@@ -11,7 +11,7 @@ export const metadata = {
 }
 export default function ProfileCard() {
   return (
-    <main className='grid place-items-center items-center md:h-screen md:w-screen bg-001-profile'>
+    <main className='grid place-items-center items-center h-screen md:w-screen bg-001-profile pb-20 md:pb-0'>
       <Back />
 
       <section className='flex flex-col w-96 h-[600px] bg-white rounded-[2.5rem] shadow-xl'>
