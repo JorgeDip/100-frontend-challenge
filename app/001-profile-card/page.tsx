@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Back from "../components/back"
 import "./styles.css"
+import Copyright from "../components/copyright"
 
 export const metadata = {
   title: "001 - Profile Card",
@@ -10,7 +11,7 @@ export const metadata = {
 }
 export default function ProfileCard() {
   return (
-    <main className='grid place-items-center items-center h-screen w-screen bg-001-profile'>
+    <main className='grid place-items-center items-center md:h-screen md:w-screen bg-001-profile'>
       <Back />
 
       <section className='flex flex-col w-96 h-[600px] bg-white rounded-[2.5rem] shadow-xl'>
@@ -100,6 +101,10 @@ export default function ProfileCard() {
           </div>
         </div>
       </section>
+      <Copyright
+        link='https://app.bigdevsoon.me/challenges/profile-card/browser'
+        author='BigDevSoon'
+      />
     </main>
   )
 }

@@ -1,12 +1,12 @@
-import Link from "next/link"
+import { Link } from "next-view-transitions"
 
 export default function Back() {
   return (
-    <Link className='absolute left-10' href='/'>
+    <Link className='md:absolute md:left-10' href='/'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 20 20'
-        className='size-14 opacity-35 hover:opacity-100 transition-opacity'
+        className='size-14 md:opacity-35 hover:opacity-100 transition-opacity'
       >
         <path
           fill='currentColor'
