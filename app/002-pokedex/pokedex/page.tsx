@@ -37,7 +37,7 @@ export default function PokedexPage() {
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 24 24'
-              className='size-12 text-gray-400 hover:text-white transition group-disabled:text-black/60'
+              className='size-12 text-white hover:text-text-gray-400 transition group-disabled:text-gray-400'
             >
               <path
                 fill='currentColor'
@@ -56,7 +56,7 @@ export default function PokedexPage() {
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 24 24'
-              className='size-12 text-gray-400 hover:text-white transition group-disabled:text-black/60'
+              className='size-12 text-white hover:text-text-gray-400 transition group-disabled:text-gray-400'
             >
               <path
                 fill='currentColor'
@@ -74,7 +74,7 @@ export default function PokedexPage() {
                 <Link
                   href={`/002-pokedex/pokedex/${pokemon?.name}`}
                   key={pokemon?.name}
-                  className='pokedex-box bg-white/80 p-2 shadow-xl group flex flex-col justify-center items-center'
+                  className='pokedex-box bg-gray-200/80 p-2 shadow-xl group flex flex-col justify-center items-center'
                 >
                   <Image
                     src={pokemon?.sprites?.other?.["official-artwork"].front_default}
@@ -84,8 +84,7 @@ export default function PokedexPage() {
                     loading='lazy'
                   />
                   <div className='text-blue-950 text-center'>
-                    [{formatNumber(pokemon?.id)}]{" "}
-                    <span className='capitalize'>{pokemon?.name}</span>
+                    #{formatNumber(pokemon?.id)} <span className='capitalize'>{pokemon?.name}</span>
                   </div>
                 </Link>
               ))}

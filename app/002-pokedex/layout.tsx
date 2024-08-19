@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Back />
       </div>
       <section className='flex shadow-xl md:border-2 border-[#3a2722] rounded-xl'>
-        <div className='w-24 hidden md:flex items-center bg-gradient-to-b from-[#2b1612] to-[#362420] border-r-4 border-[#4E342E] md:rounded-l-lg'>
+        <div className='w-24 hidden md:flex items-center bg-gradient-to-b from-[#2b1612] to-[#362420] border-r-4 border-[#4E342E] md:rounded-l-lg z-10'>
           <Knot />
         </div>
         <div className='w-full h-screen bg-pattern-pokedex bg-blue-950 md:w-[1360px] md:h-[850px] md:rounded-r-lg'>
