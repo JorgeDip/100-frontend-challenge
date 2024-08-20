@@ -7,8 +7,7 @@ export default function Loading() {
 					width='1em'
 					height='1em'
 					viewBox='0 0 24 24'
-					className='size-10'
-				>
+					className='size-10 text-gray-400'>
 					<path
 						fill='currentColor'
 						fillRule='evenodd'

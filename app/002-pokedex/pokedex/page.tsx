@@ -1,5 +1,5 @@
 "use client"
-import { Suspense, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { api } from "../api/api"
 import Image from "next/image"
 import { Link } from "next-view-transitions"
@@ -35,7 +35,7 @@ export default function PokedexPage() {
 	}
 
 	return (
-		<div className='w-full h-full md:w-full p-6 md:flex md:flex-col md:justify-center relative overflow-auto md:overflow-hidden'>
+		<div className='bg-gray-200 w-full h-full md:w-full p-6 md:flex md:flex-col md:justify-center lg:rounded-r-xl relative overflow-auto md:overflow-hidden'>
 			<PokedexBack href='/002-pokedex' />
 			<div className='md:w-full md:h-full md:flex justify-center items-center gap-x-6'>
 				<div className='flex items-center justify-around mb-12 md:mb-0 md:absolute md:w-full md:flex md:justify-between md:px-4'>
@@ -43,8 +43,7 @@ export default function PokedexPage() {
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							viewBox='0 0 24 24'
-							className='size-12 text-white hover:text-text-gray-400 transition group-disabled:text-gray-400'
-						>
+							className='size-12 text-gray-400 hover:text-gray-600 transition group-disabled:text-gray-100 group-disabled:cursor-not-allowed'>
 							<path
 								fill='currentColor'
 								fillRule='evenodd'
@@ -57,13 +56,11 @@ export default function PokedexPage() {
 					<button
 						className='group'
 						onClick={() => setOffset(offset + 25)}
-						disabled={offset === 1000 || loading}
-					>
+						disabled={offset === 1000 || loading}>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							viewBox='0 0 24 24'
-							className='size-12 text-white hover:text-text-gray-400 transition group-disabled:text-gray-400'
-						>
+							className='size-12 text-gray-400 hover:text-gray-600 transition group-disabled:text-gray-100 group-disabled:cursor-not-allowed'>
 							<path
 								fill='currentColor'
 								fillRule='evenodd'
@@ -82,8 +79,7 @@ export default function PokedexPage() {
 								<Link
 									href={`/002-pokedex/pokedex/${pokemon?.name}`}
 									key={pokemon?.name}
-									className='pokedex-box bg-gray-200/80 p-2 shadow-xl group flex flex-col justify-center items-center'
-								>
+									className='pokedex-box bg-gray-100 hover:bg-gray-300 border border-gray-200 rounded-md shadow-md p-2 group flex flex-col justify-center items-center'>
 									<Image
 										src={pokemon?.sprites?.other?.["official-artwork"].front_default}
 										alt={pokemon?.name}
@@ -91,7 +87,7 @@ export default function PokedexPage() {
 										height={100}
 										loading='lazy'
 									/>
-									<div className='text-blue-950 text-center'>
+									<div className='text-gray-700 text-center'>
 										#{formatNumber(pokemon?.id)} <span className='capitalize'>{pokemon?.name}</span>
 									</div>
 								</Link>
