@@ -1,6 +1,4 @@
 import Image from "next/image"
-import { useEffect, useState } from "react"
-import { api } from "../../api/api"
 import Moves from "../../components/pokemon/moves"
 import Stats from "../../components/pokemon/stats"
 import Forms from "../../components/pokemon/forms"
@@ -10,25 +8,19 @@ import Types from "../../components/pokemon/types"
 
 type PokemonDetailsProps = {
 	props: Pokemon
+	forms: any[]
 }
 
-export default function PokemonDetails({ props }: PokemonDetailsProps) {
-	const [pokemonForms, setPokemonForms]: any = useState([])
-	useEffect(() => {
-		props?.forms?.forEach((form: any) => {
-			api.fetchPokemonForms(form.url).then((data) => {
-				setPokemonForms((prevState: any) => [...prevState, data])
-			})
-		})
-	}, [props])
+export default function PokemonDetails({ props, forms }: PokemonDetailsProps) {
+	console.log(props)
 	return (
 		<div className='w-full h-full lg:flex lg:items-center lg:gap-x-6 bg-gray-200 lg:rounded-r-xl p-12 overflow-auto'>
 			<div className='w-full lg:h-full flex flex-col items-center lg:justify-between lg:gap-x-4 lg:flex-row gap-y-4'>
 				<div className='w-full h-full lg:w-72 shrink-0 flex flex-col border border-white/30 rounded-md shadow-md'>
-					<div className='bg-white/60 rounded-t-md capitalize text-3xl font-medium text-center py-3'>
+					<div className='bg-white/30 rounded-t-md capitalize text-3xl font-medium text-center py-3'>
 						{props?.name}
 					</div>
-					<div className='bg-white/30 rounded-t-md'>
+					<div className='bg-white/30 rounded-t-md border-y border-yellow-900/10'>
 						<Image
 							src={props?.sprites?.other?.home.front_default}
 							alt={props?.name}
@@ -39,7 +31,7 @@ export default function PokemonDetails({ props }: PokemonDetailsProps) {
 						/>
 					</div>
 					{/* Forms */}
-					<Forms forms={pokemonForms} />
+					<Forms forms={forms} />
 					<div className='flex flex-col items-center gap-y-4 mt-6'>
 						{/* types */}
 						<Types types={props?.types} />
