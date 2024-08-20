@@ -1,5 +1,5 @@
 "use client"
-import React, { use, useEffect, useMemo, useState } from "react"
+import React, { useState } from "react"
 import NewTask from "./newTask"
 import Board from "./boards"
 
@@ -14,7 +14,7 @@ type Task = {
 
 export default function Tasks() {
 	const [tasks, setTasks] = useState<Task[]>(
-		window.localStorage.getItem("tasks") ? JSON.parse(window.localStorage.getItem("tasks") as string) : []
+		window.localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks") as string) : []
 	)
 	const [modal, setModal] = useState(false)
 
@@ -37,14 +37,18 @@ export default function Tasks() {
 		}
 
 		setModal(false)
-		window.localStorage.setItem("tasks", JSON.stringify([...tasks, inputs]))
+		if (typeof window !== "undefined") {
+			localStorage.setItem("tasks", JSON.stringify([...tasks, inputs]))
+		}
 		return setTasks([...tasks, inputs])
 	}
 
 	const onDelete = (id: any) => {
 		const confirmPropmt = confirm("Are you sure you want to delete this task?")
 		if (confirmPropmt) {
-			window.localStorage.setItem("tasks", JSON.stringify(tasks.filter((task) => task.id !== id)))
+			if (typeof window !== "undefined") {
+				localStorage.setItem("tasks", JSON.stringify(tasks.filter((task) => task.id !== id)))
+			}
 			setTasks(tasks.filter((task) => task.id !== id))
 		}
 	}
