@@ -12,10 +12,12 @@ type Task = {
 	date: string
 }
 
+function getTasksFromLocalStorage() {
+	return localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks") as string) : []
+}
+
 export default function Tasks() {
-	const [tasks, setTasks] = useState<Task[]>(
-		window.localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks") as string) : []
-	)
+	const [tasks, setTasks] = useState<Task[]>(getTasksFromLocalStorage())
 	const [modal, setModal] = useState(false)
 
 	const handleSubmit = (event: any) => {
