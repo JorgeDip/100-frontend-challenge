@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import NewTask from "./newTask"
 import Board from "./boards"
 
@@ -13,14 +13,12 @@ type Task = {
 }
 
 export default function Tasks() {
-	const [tasks, setTasks] = useState<Task[]>(
-		typeof window !== "undefined"
-			? localStorage.getItem("tasks")
-				? JSON.parse(localStorage.getItem("tasks") as string)
-				: []
-			: []
-	)
+	const [tasks, setTasks] = useState<Task[]>([])
 	const [modal, setModal] = useState(false)
+
+	useEffect(() => {
+		setTasks(JSON.parse(localStorage.getItem("tasks") as string))
+	}, [])
 
 	const handleSubmit = (event: any) => {
 		event.preventDefault()
