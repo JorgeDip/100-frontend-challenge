@@ -14,7 +14,7 @@ type Task = {
 
 export default function Tasks() {
 	const [tasks, setTasks] = useState<Task[]>(
-		localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks") as string) : []
+		window.localStorage.getItem("tasks") ? JSON.parse(window.localStorage.getItem("tasks") as string) : []
 	)
 	const [modal, setModal] = useState(false)
 
@@ -37,14 +37,14 @@ export default function Tasks() {
 		}
 
 		setModal(false)
-		localStorage.setItem("tasks", JSON.stringify([...tasks, inputs]))
+		window.localStorage.setItem("tasks", JSON.stringify([...tasks, inputs]))
 		return setTasks([...tasks, inputs])
 	}
 
 	const onDelete = (id: any) => {
 		const confirmPropmt = confirm("Are you sure you want to delete this task?")
 		if (confirmPropmt) {
-			localStorage.setItem("tasks", JSON.stringify(tasks.filter((task) => task.id !== id)))
+			window.localStorage.setItem("tasks", JSON.stringify(tasks.filter((task) => task.id !== id)))
 			setTasks(tasks.filter((task) => task.id !== id))
 		}
 	}
