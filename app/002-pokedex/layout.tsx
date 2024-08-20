@@ -1,5 +1,4 @@
 import { Suspense } from "react"
-import Back from "../components/back"
 import Knot from "./components/knot"
 import "./styles.css"
 import Loading from "./components/loading"
@@ -15,16 +14,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<main
 			className='w-full flex flex-col justify-center items-center min-h-screen bg-gradient-to-t from-zinc-800 to-zinc-900'
-			style={{ backgroundImage: "url(/images/bg-pokedex.jpg)", position: "fixed" }}
+			style={{ backgroundImage: "url(/images/bg-pokedex.jpg)", position: "fixed", backgroundSize: "cover" }}
 		>
-			<div className='flex justify-center items-center'>
-				<Back />
-			</div>
-			<section className='flex shadow-xl md:border-2 border-[#3a2722] rounded-xl'>
-				<div className='w-24 hidden md:flex items-center bg-gradient-to-b from-[#2b1612] to-[#362420] border-r-4 border-[#4E342E] md:rounded-l-lg z-10'>
+			<section className='flex shadow-xl lg:border-2 border-[#3a2722] rounded-xl lg:shadow-[5px_10px_0px_2px_#2b1612]'>
+				<div className='w-24 hidden lg:flex items-center bg-gradient-to-b from-[#2b1612] to-[#362420] border-r-4 border-[#4E342E] lg:rounded-l-lg z-10'>
 					<Knot />
 				</div>
-				<div className='w-full h-screen bg-pattern-pokedex bg-blue-950 md:w-[1360px] md:h-[850px] md:rounded-r-lg'>
+				<div className='w-screen h-screen bg-pattern-pokedex bg-blue-950 lg:w-[1360px] lg:h-[850px] lg:rounded-r-lg'>
 					<Suspense fallback={<Loading />}>{children}</Suspense>
 				</div>
 			</section>
