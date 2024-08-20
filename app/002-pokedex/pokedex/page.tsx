@@ -87,7 +87,7 @@ export default function PokedexPage() {
 										height={100}
 										loading='lazy'
 									/>
-									<div className='text-gray-700 text-center'>
+									<div className='text-gray-700 text-center z-10'>
 										#{formatNumber(pokemon?.id)} <span className='capitalize'>{pokemon?.name}</span>
 									</div>
 								</Link>

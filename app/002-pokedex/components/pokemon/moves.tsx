@@ -7,7 +7,7 @@ export default function Moves(moves: any) {
 						<span className='w-full text-xl font-bold py-4 px-2'>Moves</span>
 					</div>
 
-					<div className='w-full h-64 grid grid-cols-4  overflow-y-auto'>
+					<div className='w-full h-64 grid lg:grid-cols-4  overflow-y-auto'>
 						{moves?.moves.map((move: any, index: number) => (
 							<div key={index} className='p-2'>
 								<div className='flex items-center gap-x-2 text-sm p-4 border border-white/40 shadow-md rounded-md'>
