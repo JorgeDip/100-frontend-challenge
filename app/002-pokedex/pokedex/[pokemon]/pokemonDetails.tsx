@@ -14,9 +14,9 @@ type PokemonDetailsProps = {
 export default function PokemonDetails({ props, forms }: PokemonDetailsProps) {
 	console.log(props)
 	return (
-		<div className='w-full h-full lg:flex lg:items-center lg:gap-x-6 bg-gray-200 lg:rounded-r-xl p-12 overflow-auto'>
-			<div className='w-full lg:h-full flex flex-col items-center lg:justify-between lg:gap-x-4 lg:flex-row gap-y-4'>
-				<div className='w-full h-full lg:w-72 shrink-0 flex flex-col border border-white/30 rounded-md shadow-md'>
+		<div className='w-full h-full bg-gray-200 p-12 lg:p-8 xl:p-12 overflow-auto lg:overflow-hidden lg:flex lg:items-center lg:gap-x-6 lg:rounded-r-xl'>
+			<div className='w-full h-full flex flex-col items-center lg:gap-x-4 lg:flex-row gap-y-4 xl:h-full xl:justify-between'>
+				<div className='w-full h-full shrink-0 flex flex-col border border-white/30 rounded-md shadow-md lg:w-64 xl:w-72'>
 					<div className='bg-white/30 rounded-t-md capitalize text-3xl font-medium text-center py-3'>
 						{props?.name}
 					</div>
@@ -27,7 +27,7 @@ export default function PokemonDetails({ props, forms }: PokemonDetailsProps) {
 							width={1000}
 							height={1000}
 							priority={true}
-							className='size-64 m-auto'
+							className='m-auto lg:size-32 xl:size-64'
 						/>
 					</div>
 					{/* Forms */}
@@ -54,7 +54,7 @@ export default function PokemonDetails({ props, forms }: PokemonDetailsProps) {
 						<HeldItems heldItems={props.held_items} />
 					</div>
 				</div>
-				<div className='w-full h-full flex flex-col items-start gap-y-2'>
+				<div className='w-full flex flex-col items-start gap-y-2 xl:h-full'>
 					{/* stats */}
 					<Stats stats={props?.stats} />
 					{/* moves */}

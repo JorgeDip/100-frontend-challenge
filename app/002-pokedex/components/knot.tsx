@@ -1,6 +1,6 @@
 export default function Knot() {
 	return (
-		<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 91 276' className='shrink-0 lg:h-[600px] -translate-x-20'>
+		<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 91 276' className='shrink-0 -translate-x-20 lg:h-[600px]'>
 			<path
 				fill='#ae9670'
 				stroke='#ae9670'

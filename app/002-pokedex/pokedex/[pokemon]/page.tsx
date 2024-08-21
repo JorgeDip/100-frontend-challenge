@@ -33,7 +33,7 @@ export default function PokemonPage() {
 	}, [pokemon])
 
 	return (
-		<div className='w-screen md:w-full h-full relative'>
+		<div className='w-screen h-full relative lg:w-full'>
 			<PokedexBack href='' onClick={() => router.back()} />
 			{pokemon ? <PokemonDetails props={pokemon} forms={pokemonForms} /> : <Loading />}
 			{error && <div>Error</div>}

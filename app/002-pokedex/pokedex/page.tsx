@@ -35,10 +35,10 @@ export default function PokedexPage() {
 	}
 
 	return (
-		<div className='bg-gray-200 w-full h-full md:w-full p-6 md:flex md:flex-col md:justify-center lg:rounded-r-xl relative overflow-auto md:overflow-hidden'>
+		<div className='bg-gray-200 w-full h-full p-6 relative overflow-auto lg:w-full lg:flex lg:flex-col lg:justify-center lg:rounded-r-xl lg:overflow-hidden'>
 			<PokedexBack href='/002-pokedex' />
-			<div className='md:w-full md:h-full md:flex justify-center items-center gap-x-6'>
-				<div className='flex items-center justify-around mb-12 md:mb-0 md:absolute md:w-full md:flex md:justify-between md:px-4'>
+			<div className='lg:w-full lg:h-full lg:flex lg:justify-center lg:items-center lg:gap-x-6'>
+				<div className='flex items-center justify-around mb-12 lg:mb-0 lg:absolute lg:w-full lg:flex lg:justify-between lg:px-4'>
 					<button className='group' onClick={() => setOffset(offset - 25)} disabled={offset === 0 || loading}>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -70,22 +70,23 @@ export default function PokedexPage() {
 						</svg>
 					</button>
 				</div>
-				<div className='md:w-full md:h-full flex flex-col md:flex-row md:px-12'>
+				<div className='flex flex-col lg:w-full lg:h-full lg:flex-row lg:px-12'>
 					{loading ? (
 						<Loading />
 					) : (
-						<div className='w-full h-full grid grid-cols-2 md:grid-cols-5 gap-6 mb-10'>
+						<div className='w-full h-full grid gap-6 grid-cols-2 lg:grid-cols-5'>
 							{pokemonList.map((pokemon: Pokemon) => (
 								<Link
 									href={`/002-pokedex/pokedex/${pokemon?.name}`}
 									key={pokemon?.name}
-									className='pokedex-box bg-gray-100 hover:bg-gray-300 border border-gray-200 rounded-md shadow-md p-2 group flex flex-col justify-center items-center'>
+									className='pokedex-box bg-gray-100 hover:bg-gray-300 border border-gray-200 rounded-lg shadow-lg p-2 group flex flex-col justify-center items-center xl:w-full xl:h-full'>
 									<Image
 										src={pokemon?.sprites?.other?.["official-artwork"].front_default}
 										alt={pokemon?.name}
 										width={100}
 										height={100}
 										loading='lazy'
+										className='lg:w-[50px] lg:h-[50px] xl:w-[100px] xl:h-[100px]'
 									/>
 									<div className='text-gray-700 text-center z-10'>
 										#{formatNumber(pokemon?.id)} <span className='capitalize'>{pokemon?.name}</span>
@@ -94,7 +95,7 @@ export default function PokedexPage() {
 							))}
 						</div>
 					)}
-					<div className='hidden md:absolute md:-bottom-0 md:left-[47%] md:text-white'>{offset} - 1025</div>
+					<div className='hidden lg:absolute lg:-bottom-0 lg:left-[47%] lg:text-white'>{offset} - 1025</div>
 				</div>
 			</div>
 		</div>
