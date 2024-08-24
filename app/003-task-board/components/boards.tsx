@@ -16,7 +16,7 @@ export default function Board({
 			</button>
 			{tasks.map((task) => (
 				<div key={task.title} className='bg-white p-4 rounded-xl mb-6 shadow-md relative'>
-					<div className='w-full flex flex-col gap-y-4 gap-x-4'>
+					<div className='w-full flex flex-col gap-y-4 gap-x-4 pb-4'>
 						<div className='flex justify-between'>
 							<span
 								className={`uppercase font-bold ${
@@ -25,13 +25,12 @@ export default function Board({
 										: task.priority === "medium"
 										? "bg-blue-500"
 										: "bg-green-500"
-								} text-white text-xs rounded-md p-1`}
-							>
+								} text-white text-xs rounded-md p-1`}>
 								{task.priority}
 							</span>
 							<span className='text-xs text-gray-500'>{task.date}</span>
 						</div>
-						<div className=''>
+						<div className='break-all'>
 							<h2 className='font-bold text-xl'>{task.title}</h2>
 							<p className='text-sm'>{task.description}</p>
 						</div>
@@ -40,8 +39,7 @@ export default function Board({
 					<div className='absolute right-2 bottom-2 md:right-4 md:bottom-4'>
 						<button
 							className='p-2 border border-black/20 rounded-md hover:bg-black/10'
-							onClick={() => onDelete(task.id)}
-						>
+							onClick={() => onDelete(task.id)}>
 							<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' className='size-5'>
 								<path
 									fill='currentColor'

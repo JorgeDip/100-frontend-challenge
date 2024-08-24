@@ -30,10 +30,9 @@ export default function Types(types: any) {
 					key={index}
 					className={`${
 						PokemonTypeColor[type.type.name as keyof typeof PokemonTypeColor]
-					} text-white text-xs font-bold flex items-center p-2 rounded-lg gap-x-2`}
-				>
+					} text-white text-xs font-bold flex items-center p-2 rounded-lg gap-x-2`}>
 					<Image
-						src={`/images/pokemon-types/${type.type.name}.svg`}
+						src={`/images/pokedex/pokemon-types/${type.type.name}.svg`}
 						className='size-4'
 						width={20}
 						height={20}

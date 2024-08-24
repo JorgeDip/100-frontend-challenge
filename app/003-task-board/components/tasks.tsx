@@ -27,7 +27,7 @@ export default function Tasks() {
 		const status = event.target.status.value
 		const description = event.target.description.value
 
-		if (!title || !priority || !status || !description) return
+		if (!title || !priority || !status || !description || title.length > 50) return
 
 		const inputs: Task = {
 			id: new Date(),

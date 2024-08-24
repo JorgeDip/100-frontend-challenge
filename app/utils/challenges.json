@@ -22,5 +22,13 @@
         "image": "/images/screenshots/003-task-board.png",
         "link": "003-task-board",
         "author": "BigDevSoon"
+    },
+    {
+        "id": 4,
+        "title": "Space Tourism",
+        "description": "Space tourism page with a list of destinations, crew and technology.",
+        "image": "/images/screenshots/004-space-tourism.png",
+        "link": "004-space-tourism",
+        "author": "frontendmentor"
     }
 ]
