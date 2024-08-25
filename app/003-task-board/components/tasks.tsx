@@ -14,7 +14,7 @@ type Task = {
 
 export default function Tasks() {
 	const [tasks, setTasks] = useState<Task[]>([])
-	const [modal, setModal] = useState(false)
+	const [modal, setModal] = useState({ isOpen: false, board: "" })
 
 	useEffect(() => {
 		setTasks(JSON.parse(localStorage.getItem("tasks") as string))
@@ -38,7 +38,7 @@ export default function Tasks() {
 			date: new Date().toLocaleDateString(),
 		}
 
-		setModal(false)
+		setModal({ isOpen: false, board: "" })
 		if (typeof window !== "undefined") {
 			localStorage.setItem("tasks", JSON.stringify([...tasks, inputs]))
 		}
@@ -59,33 +59,39 @@ export default function Tasks() {
 		<div className='w-full h-full grid grid-cols-1 md:grid-cols-4 gap-4'>
 			<Board
 				board='To do'
-				onClick={() => setModal(true)}
+				onClick={() => setModal({ isOpen: true, board: "to-do" })}
 				onDelete={onDelete}
 				tasks={tasks.filter((task) => task.status === "to-do")}
 			/>
 
 			<Board
 				board='In progress'
-				onClick={() => setModal(true)}
+				onClick={() => setModal({ isOpen: true, board: "in-progress" })}
 				onDelete={onDelete}
 				tasks={tasks.filter((task) => task.status === "in-progress")}
 			/>
 
 			<Board
 				board='Under review'
-				onClick={() => setModal(true)}
+				onClick={() => setModal({ isOpen: true, board: "under-review" })}
 				onDelete={onDelete}
 				tasks={tasks.filter((task) => task.status === "under-review")}
 			/>
 
 			<Board
 				board='Done'
-				onClick={() => setModal(true)}
+				onClick={() => setModal({ isOpen: true, board: "done" })}
 				onDelete={onDelete}
 				tasks={tasks.filter((task) => task.status === "done")}
 			/>
 
-			{modal && <NewTask onSubmit={handleSubmit} onClose={() => setModal(false)} />}
+			{modal.isOpen && (
+				<NewTask
+					board={modal.board}
+					onSubmit={handleSubmit}
+					onClose={() => setModal({ isOpen: false, board: "" })}
+				/>
+			)}
 		</div>
 	)
 }

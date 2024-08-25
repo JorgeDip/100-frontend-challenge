@@ -3,9 +3,11 @@ import { useState } from "react"
 export default function NewTask({
 	onSubmit,
 	onClose,
+	board,
 }: {
 	onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
 	onClose: () => void
+	board: string
 }) {
 	const [characterCounter, setCharacterCounter] = useState({
 		text: 0,
@@ -47,7 +49,7 @@ export default function NewTask({
 
 				<label>
 					<span className='text-sm text-black/80'>Board</span>
-					<select name='status' className='w-full p-2 border border-black/20 rounded-md'>
+					<select name='status' defaultValue={board} className='w-full p-2 border border-black/20 rounded-md'>
 						<option value='to-do'>To do</option>
 						<option value='in-progress'>In progress</option>
 						<option value='under-review'>Under review</option>

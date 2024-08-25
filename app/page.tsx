@@ -4,7 +4,7 @@ import { Link } from "next-view-transitions"
 
 export default function Home() {
 	return (
-		<main className='bg-gray-100 min-h-screen flex flex-col items-center gap-y-10'>
+		<main className='bg-gray-100 min-h-screen flex flex-col items-center gap-y-10 bg-pattern-2'>
 			<header className='bg-pattern bg-gray-300 p-2 w-full h-96 flex flex-col items-center justify-center shadow-sm'>
 				<h1 className='text-[3rem] md:text-[5rem] font-bold text-black'>100 Challenges</h1>
 				<p className='text-xl text-black/80'>
