@@ -7,12 +7,5 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-	return (
-		<html suppressHydrationWarning>
-			<head>
-				<link rel='shortcut icon' href='/images/space-tourism/favicon-32x32.png' type='image/x-icon' />
-			</head>
-			<body suppressHydrationWarning>{children}</body>
-		</html>
-	)
+	return <div>{children}</div>
 }

@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import Header from "../components/header"
-import { destinations } from "@/app/utils/004-space-tourism/data.json"
+import data from "@/app/utils/004-space-tourism/data.json"
 
 import { Barlow_Condensed } from "next/font/google"
 import { Bellefair } from "next/font/google"
@@ -18,10 +18,9 @@ export default function DestinationPage() {
 	const [destination, setDestination] = useState("Moon")
 	return (
 		<main className='flex flex-col min-h-screen md:h-screen bg-[url(/images/space-tourism/destination/background-destination-mobile.jpg)] md:bg-[url(/images/space-tourism/destination/background-destination-tablet.jpg)] lg:bg-[url(/images/space-tourism/destination/background-destination-desktop.jpg)] lg:fixed bg-cover bg-center'>
-			{" "}
 			<Header />
 			<Container number='01' title='pick your destination'>
-				{destinations
+				{data.destinations
 					.filter((dest: any) => dest.name === destination)
 					.map((des: any) => (
 						<div

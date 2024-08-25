@@ -10,7 +10,7 @@ const barlow = Barlow({ weight: ["400"], subsets: ["latin"] })
 
 export default function SpaceTourism() {
 	return (
-		<main className='flex flex-col h-full bg-[url(/images/space-tourism/home/background-home-mobile.jpg)] md:bg-[url(/images/space-tourism/home/background-home-tablet.jpg)] lg:bg-[url(/images/space-tourism/home/background-home-desktop.jpg)] bg-cover bg-center'>
+		<main className='w-full flex flex-col h-full bg-[url(/images/space-tourism/home/background-home-mobile.jpg)] md:bg-[url(/images/space-tourism/home/background-home-tablet.jpg)] lg:bg-[url(/images/space-tourism/home/background-home-desktop.jpg)] fixed bg-cover bg-center'>
 			<Header />
 			<section className='h-full flex flex-col items-center justify-center md:gap-x-20 lg:flex-row lg:justify-between lg:px-60'>
 				<div className='w-full flex flex-col items-center justify-center gap-y-6 p-8 md:px-64 lg:w-[600px] lg:items-start lg:px-0'>

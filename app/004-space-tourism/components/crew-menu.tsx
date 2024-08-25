@@ -1,8 +1,8 @@
-import { crew } from "@/app/utils/004-space-tourism/data.json"
+import data from "@/app/utils/004-space-tourism/data.json"
 export default function CrewMenu({ setCrew, crews }: { setCrew: (crew: string) => void; crews: string }) {
 	return (
 		<div className='flex gap-x-8 justify-center lg:justify-start'>
-			{crew.map((crew: any) => (
+			{data.crew.map((crew: any) => (
 				<button
 					key={crew.name}
 					onClick={() => setCrew(crew.name)}

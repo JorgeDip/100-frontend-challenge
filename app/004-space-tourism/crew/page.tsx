@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import Header from "../components/header"
-import { crew } from "@/app/utils/004-space-tourism/data.json"
+import data from "@/app/utils/004-space-tourism/data.json"
 
 import { Barlow_Condensed } from "next/font/google"
 import { Bellefair } from "next/font/google"
@@ -20,7 +20,7 @@ export default function CrewPage() {
 		<main className='flex flex-col min-h-screen md:h-screen bg-[url(/images/space-tourism/crew/background-crew-mobile.jpg)] md:bg-[url(/images/space-tourism/crew/background-crew-tablet.jpg)] lg:bg-[url(/images/space-tourism/crew/background-crew-desktop.jpg)] lg:fixed bg-cover bg-center'>
 			<Header />
 			<Container number='02' title='Meet your crew'>
-				{crew
+				{data.crew
 					.filter((crew: any) => crew.name === crews)
 					.map((crew: any) => (
 						<div

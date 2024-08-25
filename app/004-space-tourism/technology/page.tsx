@@ -3,13 +3,11 @@ import Image from "next/image"
 import Container from "../components/container"
 import Header from "../components/header"
 import { useState } from "react"
-import { technology } from "@/app/utils/004-space-tourism/data.json"
+import data from "@/app/utils/004-space-tourism/data.json"
 import TechnologyMenu from "../components/technology-menu"
 
-import { Barlow_Condensed } from "next/font/google"
 import { Bellefair } from "next/font/google"
 import { Barlow } from "next/font/google"
-const barlow_condensed = Barlow_Condensed({ weight: ["200", "300"], subsets: ["latin"] })
 const bellefair = Bellefair({ weight: ["400"], subsets: ["latin"] })
 const barlow = Barlow({ weight: ["400"], subsets: ["latin"] })
 
@@ -19,7 +17,7 @@ export default function TechnologyPage() {
 		<main className='w-full flex flex-col min-h-screen md:h-screen bg-[url(/images/space-tourism/technology/background-technology-mobile.jpg)] md:bg-[url(/images/space-tourism/technology/background-technology-tablet.jpg)] lg:bg-[url(/images/space-tourism/technology/background-technology-desktop.jpg)] lg:fixed bg-cover bg-center'>
 			<Header />
 			<Container number='03' title='Space Launch 101'>
-				{technology
+				{data.technology
 					.filter((tech: any) => tech.name === technologys)
 					.map((tech: any) => (
 						<div key={tech.name} className='w-full flex flex-col mt-12 lg:mt-0 lg:px-60 lg:flex-row'>

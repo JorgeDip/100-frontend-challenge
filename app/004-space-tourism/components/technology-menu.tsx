@@ -1,4 +1,4 @@
-import { technology } from "@/app/utils/004-space-tourism/data.json"
+import data from "@/app/utils/004-space-tourism/data.json"
 import { Bellefair } from "next/font/google"
 const bellefair = Bellefair({ weight: ["400"], subsets: ["latin"] })
 
@@ -11,7 +11,7 @@ export default function TechnologyMenu({
 }) {
 	return (
 		<div className='flex gap-x-8 lg:flex-col lg:gap-y-4'>
-			{technology.map((tech: any, index: number) => (
+			{data.technology.map((tech: any, index: number) => (
 				<button
 					key={index}
 					className={`shrink-0 ${
