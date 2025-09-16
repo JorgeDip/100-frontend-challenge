@@ -17,7 +17,7 @@ export default function Tasks() {
 	const [modal, setModal] = useState({ isOpen: false, board: "" })
 
 	useEffect(() => {
-		setTasks(JSON.parse(localStorage.getItem("tasks") as string))
+		setTasks(JSON.parse(localStorage.getItem("tasks") as string || []))
 	}, [])
 
 	const handleSubmit = (event: any) => {
